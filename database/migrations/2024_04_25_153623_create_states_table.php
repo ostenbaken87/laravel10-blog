@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('likes');
             $table->integer('views');
             $table->foreignId('article_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
