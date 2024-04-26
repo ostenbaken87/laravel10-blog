@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Comment;
 use App\Models\State;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $users = User::factory(10)->create();
+
         $tags = Tag::factory(10)->create(); //создаем 10 тегов
 
         $articles = Article::factory(20)->create(); // создаем 20 статей
