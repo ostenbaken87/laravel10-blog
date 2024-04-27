@@ -13,7 +13,7 @@
                         <img src="{{$article->img}}" alt=""/>
                     </div>
                     <div class="post_title">
-                        <a href="#"> {{$article->title}} </a>
+                        <a href="{{route('article',['id' => $article->id] )}}"> {{$article->title}} </a>
                     </div>
                     <div class="post_description">
                         {{$article->body}}
