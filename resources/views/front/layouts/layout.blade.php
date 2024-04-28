@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{{asset('plugin/fontawesome-free/css/all.min.css')}}"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
-    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"/>
+    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon"/>
     <title>Blog</title>
 </head>
 <body>
@@ -42,12 +42,17 @@
                     <button class="btn btn_search" type="submit">Search</button>
                 </form>
                 <div class="navbar_enter">
-                    <div class="navbar_login">
-                        LogIn/RegIn <i class="fas fa-sign-in-alt"></i>
-                    </div>
-                    <div class="navbar_logout">
-                        LogOut <i class="fas fa-door-open"></i>
-                    </div>
+                    @auth
+                        <div class="navbar_logout">
+                            <a href="{{route('logout')}}">LogOut <i class="fas fa-door-open"></i></a>
+                        </div>
+                    @endauth
+                    @guest
+                        <div class="navbar_login">
+                            <a href="{{route('loginForm')}}">LogIn <i class="fas fa-sign-in-alt"></i></a>
+                            <a href="{{route('register')}}">RegIn <i class="fas fa-sign-in-alt"></i></a>
+                        </div>
+                    @endguest
                 </div>
             </div>
             <div class="navbar_burger">

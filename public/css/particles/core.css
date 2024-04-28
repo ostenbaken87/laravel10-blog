@@ -62,3 +62,8 @@ a {
     cursor: pointer;
 }
 
+.alert{
+    font-weight: bold;
+    color: red;
+}
+
