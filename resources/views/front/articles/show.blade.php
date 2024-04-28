@@ -23,7 +23,7 @@
                 <div class="article_tags">
                     @foreach($article->tags as $tag)
                         <div class="article_tag">
-                            <a href="#">{{$tag->label}}</a>
+                            <a href="{{route('tags',['id' => $tag->id])}}">{{$tag->label}}</a>
                         </div>
                     @endforeach
                 </div>
